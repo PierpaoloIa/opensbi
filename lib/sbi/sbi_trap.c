@@ -26,7 +26,7 @@ static void __noreturn sbi_trap_error(const char *msg, int rc,
 	u32 hartid = current_hartid();
 
 	sbi_printf(" %s: hart%d: %s (error %d)\n", __func__, hartid, msg, rc);
-	sbi_printf("%s: hart%d: mcause=0x%" PRILX " mtval=0x%" PRILX "\n",
+	sbi_printf("  %s: hart%d: mcause=0x%" PRILX " mtval=0x%" PRILX "\n",
 		   __func__, hartid, mcause, mtval);
 	if (misa_extension('H')) {
 		sbi_printf("%s: hart%d: mtval2=0x%" PRILX
